@@ -1,3 +1,3 @@
-from .client import OWMClient
+from .client import OWMClient, AsyncOWMClient
 
-__all__ = (OWMClient,)
+__all__ = (OWMClient, AsyncOWMClient)
