@@ -2,6 +2,8 @@
 
 ## A Python library to interface with the OpenWeatherMap weather API
 
+### To use this library you will require an OpenWeatherMap API key [which can be obtained here](https://openweathermap.org/price).
+
 Examples:
 ```py
 from py_owm import OWMClient
