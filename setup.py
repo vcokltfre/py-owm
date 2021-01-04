@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = "1.0.0"
+version = "1.1.0"
 
 setup(
 	name='py_owm',
@@ -11,7 +11,7 @@ setup(
 	author='vcokltfre',
 	long_description=open("README.md").read(),
 	long_description_content_type="text/markdown",
-	install_requires=["requests"],
+	install_requires=["requests", "aiohttp"],
 	description='A Python library to interface with the OpenWeatherMap weather API',
 	python_requires='>=3.6',
 )
