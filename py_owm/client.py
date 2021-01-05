@@ -14,7 +14,7 @@ class OWMClient:
     def get(self, query: str):
         query += f"&appid={self.token}"
 
-        response = get(API_location + query)
+        response = get(API_location + query, headers=headers)
         response.raise_for_status()
 
         return Weather(response.json())
