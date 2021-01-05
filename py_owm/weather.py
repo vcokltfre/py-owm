@@ -1,5 +1,7 @@
 from copy import copy
 
+from .static import human_codes
+
 
 class Weather:
     def __init__(self, data: dict):
@@ -27,3 +29,7 @@ class Weather:
         self.temp_max: float = self.main["temp_max"]
         self.pressure: int = self.main["pressure"]
         self.humidity: int = self.main["humidity"]
+
+    def get_human_weather(self):
+        code = self.weather[0]["id"]
+        return human_codes.get(code)
