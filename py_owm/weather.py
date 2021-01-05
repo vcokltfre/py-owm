@@ -1,4 +1,5 @@
 from copy import copy
+from typing import Union
 
 from .static import human_codes
 
@@ -13,7 +14,6 @@ class Weather:
         self.base: str = data.pop("base")
         self.visibility: int = data.pop("visibility")
         self.wind: dict = data.pop("wind")
-        self.clouds: dict = data.pop("clouds")
         self.timestamp: int = data.pop("dt")
         self.sys: dict = data.pop("sys")
         self.timezone: int = data.pop("timezone")
@@ -29,6 +29,10 @@ class Weather:
         self.temp_max: float = self.main["temp_max"]
         self.pressure: int = self.main["pressure"]
         self.humidity: int = self.main["humidity"]
+
+        self.clouds: Union[dict, None] = data.get("clouds", None)
+        self.rain: Union[dict, None] = data.get("rain", None)
+        self.snow: Union[dict, None] = data.get("snow", None)
 
     def get_human_weather(self):
         code = self.weather[0]["id"]
